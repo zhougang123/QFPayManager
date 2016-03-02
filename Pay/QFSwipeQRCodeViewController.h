@@ -18,7 +18,13 @@
 
 @property (nonatomic, copy  ) UIImage  *guideImage;            //navigation bar右边操作指引显示图片，不设置图片则不显示按钮
 
-@property (nonatomic, copy  ) NSString *scanTips;              //二维码扫描窗口下面的扫描说明
+@property (nonatomic, copy  ) NSString *scanMasterTips;              //二维码扫描窗口下面的扫描说明标题
+
+@property (nonatomic, copy  ) UIColor  *scanMasterTipsColor;
+
+@property (nonatomic, copy  ) NSString *scanDetialTips;              //二维码扫描窗口下面的扫描说明详情
+
+@property (nonatomic, copy  ) UIColor  *scanDetialTipsColor;
 
 @property (nonatomic, strong) UIColor  *naviBarBackgroundColor;//navigation bar的背景颜色
 
