@@ -10,12 +10,12 @@ Pod::Spec.new do |s|
 
     s.name         = "QFPayManager"
 
-    s.version      = "1.1.0"
+    s.version      = "1.1.1"
 
     s.summary      = "OnLineLib is a sdk."
 
     s.description  = <<-DESC
-                     **** OnLineLib is a sdk.
+                     **** QFPayManager is a sdk.
                     DESC
 
     s.homepage     = "http://EXAMPLE/OnLineLib"
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
     s.platform     = :ios, "7.0"
 
-    s.source       = { :git => "https://github.com/zhougang123/QFPayManager.git", :tag => "1.1.0" }
+    s.source       = { :git => "https://github.com/zhougang123/QFPayManager.git", :tag => "1.1.1" }
 
     s.source_files  = "Pay/*.{h,m}"
 
