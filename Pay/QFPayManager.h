@@ -176,6 +176,17 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
                                   failed:(void (^)(NSString *errorMsg))failedBlock;
 
 /***
+ ***修改密码
+ ***@newPwd     新密码
+ ***@oldPwd     旧密码
+ ***return   userInfo用户信息
+ ***/
+- (void)changePasswordWithNewPassword:(NSString *)newPwd
+                          OldPassword:(NSString *)oldPwd
+                           success:(void (^)(NSString *successMsg))successBlock
+                            failed:(void(^)(NSString *errorMsg))failedBlock;
+
+/***
  ***退出登录
  ***会清除掉缓存的所有登录账号相关的数据
  ***/
