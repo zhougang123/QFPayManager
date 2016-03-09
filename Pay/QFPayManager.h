@@ -129,6 +129,9 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
     QFNetworkReachabilityReachable,   //网络连接正常
 };
 
+#define QFPayManagerAutoLoginSuccessNotification @"QFPayManagerAutoLoginSuccessNotification"
+#define QFPayManagerAutoLoginFailedNotification  @"QFPayManagerAutoLoginFailedNotification"
+
 @interface QFPayManager : NSObject
 
 @property (nonatomic, assign) APIEnvironmentType apiEnvironmentType;//配置api请求的服务器
