@@ -120,7 +120,8 @@ typedef NS_ENUM(NSInteger, APIEnvironmentType){
 typedef NS_ENUM(NSInteger, QFPayManagerStatus){
     QFPayManagerStatusCollectFuncationNormal,//收款功能正常使用
     QFPayManagerStatusCollectFuncationError, //收款功能不能正常使用
-    QFPayManagerStatusLoginRequired          //需要重新登录
+    QFPayManagerStatusLoginRequired,         //需要重新登录
+    QFPayManagerStatusAutoLoginWaiting
 };
 
 
