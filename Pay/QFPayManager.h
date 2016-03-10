@@ -12,6 +12,8 @@
 
 #import "FixNilBug.h"
 
+#import "QFNetworkConfig.h"
+
 #pragma mark - 用户信息
 
 @interface QFUserInfo : NSObject
@@ -39,7 +41,16 @@
 
 @end
 
+@interface QFMerchantDetials : NSObject
 
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic, copy) NSString *bankAccount;
+@property (nonatomic, copy) NSString *businessAddr;
+@property (nonatomic, copy) NSString *mobile;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *nickname;
+
+@end
 
 
 #pragma mark - 订单信息
@@ -111,11 +122,7 @@ typedef NS_ENUM(NSInteger, QFPayOrderType)
 @end
 
 
-typedef NS_ENUM(NSInteger, APIEnvironmentType){
-    APIEnvironmentTypeLandRelease,     //大陆线上 默认
-    APIEnvironmentTypeOverseaRelease,  //海外线上
-    APIEnvironmentTypeOffline          //成都线下
-};
+
 
 typedef NS_ENUM(NSInteger, QFPayManagerStatus){
     QFPayManagerStatusCollectFuncationNormal,//收款功能正常使用
@@ -130,12 +137,11 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
     QFNetworkReachabilityReachable,   //网络连接正常
 };
 
+#define QFPayManagerLoginSuccessNotification     @"QFPayManagerLoginSuccessNotification"
 #define QFPayManagerAutoLoginSuccessNotification @"QFPayManagerAutoLoginSuccessNotification"
 #define QFPayManagerAutoLoginFailedNotification  @"QFPayManagerAutoLoginFailedNotification"
 
 @interface QFPayManager : NSObject
-
-@property (nonatomic, assign) APIEnvironmentType apiEnvironmentType;//配置api请求的服务器
 
 @property (nonatomic, assign) QFPayManagerStatus payManagerStatus;  //调用支付以前请先检查工作状态
 
@@ -190,6 +196,10 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
                            success:(void (^)(NSString *successMsg))successBlock
                             failed:(void(^)(NSString *errorMsg))failedBlock;
 
+
+
+- (void)payManagerGetMerchantDetialsSuccess:(void (^)(QFMerchantDetials *detials))successBlock
+                                     failed:(void(^)(NSString *errorMsg))failedBlock;
 /***
  ***退出登录
  ***会清除掉缓存的所有登录账号相关的数据

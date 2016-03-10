@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.name         = "QFPayManager"
 
-    s.version      = "1.2.2"
+    s.version      = "1.2.3"
 
     s.summary      = "OnLineLib is a sdk."
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
     s.platform     = :ios, "7.0"
 
-    s.source       = { :git => "https://github.com/zhougang123/QFPayManager.git", :tag => "1.2.2" }
+    s.source       = { :git => "https://github.com/zhougang123/QFPayManager.git", :tag => "1.2.3" }
 
     s.source_files  = "Pay/*.{h,m}"
 
@@ -36,6 +36,6 @@ Pod::Spec.new do |s|
 
     s.requires_arc = true
 
-    s.frameworks = 'Foundation', 'CoreGraphics', 'UIKit', 'AVFoundation'
+    s.frameworks = 'CoreGraphics', 'UIKit', 'AVFoundation'
 
 end
