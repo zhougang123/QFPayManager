@@ -12,8 +12,6 @@
 
 #import "FixNilBug.h"
 
-#import "QFNetworkConfig.h"
-
 #pragma mark - 用户信息
 
 @interface QFUserInfo : NSObject
@@ -122,7 +120,11 @@ typedef NS_ENUM(NSInteger, QFPayOrderType)
 @end
 
 
-
+typedef NS_ENUM(NSInteger, QFAPIEnvironment){
+    QFAPIEnvironmentLandRelease,     //大陆线上 默认
+    QFAPIEnvironmentOverseaRelease,  //海外线上
+    QFAPIEnvironmentOffline          //成都线下
+};
 
 typedef NS_ENUM(NSInteger, QFPayManagerStatus){
     QFPayManagerStatusCollectFuncationNormal,//收款功能正常使用
@@ -141,11 +143,16 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
 #define QFPayManagerAutoLoginSuccessNotification @"QFPayManagerAutoLoginSuccessNotification"
 #define QFPayManagerAutoLoginFailedNotification  @"QFPayManagerAutoLoginFailedNotification"
 
+
+
 @interface QFPayManager : NSObject
 
 @property (nonatomic, assign) QFPayManagerStatus payManagerStatus;  //调用支付以前请先检查工作状态
 
 + (instancetype)shared;
+
+- (void)payManagerApiModel:(QFAPIEnvironment )apiType;
+
 
 /***
  ***检测网络状态
