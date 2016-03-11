@@ -144,16 +144,16 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
 #define QFPayManagerAutoLoginFailedNotification  @"QFPayManagerAutoLoginFailedNotification"
 
 
-
 @interface QFPayManager : NSObject
 
 @property (nonatomic, assign) QFPayManagerStatus payManagerStatus;  //调用支付以前请先检查工作状态
 
 + (instancetype)shared;
 
+
 - (void)payManagerApiModel:(QFAPIEnvironment )apiType;
 
-
+- (BOOL)payManagerCanPayOffLine;
 /***
  ***检测网络状态
  ***/
