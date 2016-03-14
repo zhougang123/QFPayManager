@@ -167,7 +167,9 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
 - (void)payManagerInit;
 
 
-
+- (void)payManagerAuthRefoundWithPassWord:(NSString *)password
+                                  success:(void (^)(QFUserInfo *userInfo))successBlock
+                                   failed:(void(^)(NSString *errorMsg))failedBlock;
 
 /***
  ***主账号登录，登录一次，只要不退出登录、出现网络异常或删除app的情况，在app重新启动、激活都可以无需调用登录接口
@@ -277,12 +279,21 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
 - (void)WXPayCloseOrderWithOrderInfo:(QFOrderInfo *)orderInfo
                              success:(void (^)(QFOrderInfo *orderIno))successBlock
                               failed:(void (^)(QFOrderInfo *orderIno, NSString *errorMsg))failedBlock;
+
+
+
+/***
+ ***用登录接口验证密码，再调用退款接口
+ ***/
+- (void)WXPayRefundWithOrderInfo:(QFOrderInfo *)orderInfo
+                         success:(void (^)(QFOrderInfo *orderIno))successBlock
+                          failed:(void (^)(QFOrderInfo *orderIno, NSString *errorMsg))failedBlock;
+
 /***
  ***微信退款,需要验证密码
  ***@password 密码验证
  ***@orderInfo 传流水调用返回的订单信息 QFOrderInfo
  ***/
-
 - (void)WXPayRefundWithAuthPassword:(NSString *)password
                           orderInfo:(QFOrderInfo *)orderInfo
                             success:(void (^)(QFOrderInfo *orderIno))successBlock
