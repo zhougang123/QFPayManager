@@ -14,6 +14,8 @@
 
 @property (nonatomic, copy  ) NSString *leftTitle;             //navigation bar左边按钮的文字
 
+@property (nonatomic, copy  ) UIImage  *backImage;            
+
 @property (nonatomic, copy  ) NSString *centerTitle;           //navigation bar中间的title
 
 @property (nonatomic, copy  ) UIImage  *guideImage;            //navigation bar右边操作指引显示图片，不设置图片则不显示按钮
