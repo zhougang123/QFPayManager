@@ -281,7 +281,6 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
                               failed:(void (^)(QFOrderInfo *orderIno, NSString *errorMsg))failedBlock;
 
 
-
 /***
  ***用登录接口验证密码，再调用退款接口
  ***/
