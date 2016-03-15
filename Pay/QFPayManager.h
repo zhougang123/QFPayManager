@@ -63,6 +63,7 @@ typedef NS_ENUM(NSInteger, QFPayOrderResultType)
 {
     QFPayOrderResultTypeSuccess, //支付成功
     QFPayOrderResultTypeFailed,  //支付失败
+    QFPayOrderResultTypePwdError, //微信支付密码输错
     QFPayOrderResultTypeWaitingPay, //等待支付结果
     QFPayOrderResultTypeRefundSuccess,//退款成功
     QFPayOrderResultTypeRefundFailed,//退款失败
