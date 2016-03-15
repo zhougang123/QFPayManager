@@ -202,8 +202,8 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
  ***/
 - (void)changePasswordWithNewPassword:(NSString *)newPwd
                           OldPassword:(NSString *)oldPwd
-                           success:(void (^)(NSString *successMsg))successBlock
-                            failed:(void(^)(NSString *errorMsg))failedBlock;
+                              success:(void (^)(NSString *successMsg))successBlock
+                               failed:(void(^)(NSString *errorMsg))failedBlock;
 
 
 
@@ -299,6 +299,11 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
                              failed:(void (^)(QFOrderInfo *orderIno, NSString *errorMsg))failedBlock;
 
 
+/***
+ ***取消轮询
+ ***/
+- (void)payManagerCancelWaitResult;
+
 
 #pragma mark - 支付宝
 /***
@@ -376,10 +381,6 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
                           success:(void (^)(NSArray *allDateArray, NSDictionary *tradeOrdersDict, QFTradeLastestInfo *tradeLastestInfo, NSString *serverTime))successBlock
                            failed:(void (^)(NSString *errorMsg))failedBlock;
 
-
-
-#pragma mark - swipe card
-- (void)startSwipeCard;
 
 @end
 
