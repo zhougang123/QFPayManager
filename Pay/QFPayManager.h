@@ -377,6 +377,10 @@ typedef NS_ENUM(NSInteger, QFNetworkReachability){
                            failed:(void (^)(NSString *errorMsg))failedBlock;
 
 
+
+#pragma mark - swipe card
+- (void)startSwipeCard;
+
 @end
 
 
